@@ -1,0 +1,11 @@
+.search{
+    position: relative;
+    left: 100%;
+    bottom: 50%;
+}
+
+.add{
+    position: relative;
+    left: 85%;
+    bottom:100px;
+}

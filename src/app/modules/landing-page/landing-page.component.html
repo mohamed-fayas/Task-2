@@ -1,0 +1,118 @@
+<div class="main" style="background-color: aliceblue;">
+    <div class="row">
+        <div class="col-md-3 p-4">
+            <div class="dropdown">
+                <select class="form-control">
+                    <option disabled selected>Question Type:</option>
+                    <option>MCQ</option>
+                    <option>Fill in the blanks</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3 p-4">
+            <div class="dropdown">
+                <select class="form-control">
+                    <option disabled selected>Difficulty Level:</option>
+                    <option>Hard</option>
+                    <option>Easy</option>
+                    <option>Medium</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3 p-4">
+            <div class="dropdown">
+                <select class="form-control" name="code" [(ngModel)]='questioncode'>
+                    <option value="" disabled selected >Question Code:</option>
+                    <option value="all">All</option>
+                    <option value="QTM001">QTM001</option>
+                    <option value="QTM002">QTM002</option>
+                </select>
+            </div>
+            <div class="search">
+                <button class="btn btn-outlinre-seccondary" (click)="filterCode()">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+    
+        <div class="add">
+            <button type="button" class="btn btn-warning px-2" routerLink="add_question">Add question</button>
+        </div>
+    </div>
+
+    <table class="table table-secondary">
+        <thead>
+            <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Question</th>
+                <th scope="col">Time Limit </th>
+                <th scope="col">Difficulty</th>
+                <th scope="col">Type</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of displayArray ">
+                <td name="tdcode">{{item.code}}</td>
+                <td [innerHTML]="item.question"></td>
+                <td>{{item.timeLimit}}</td>
+                <td>{{item.difficulty}}</td>
+                <td>{{item.questionType}}</td>
+                <td>
+
+                    <i class="bi bi-eyeglasses" (click)="loadModal(item)" data-bs-target="#staticBackdrop"
+                        data-bs-toggle="modal"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <tr>
+                        <td> <label><b>Code:</b></label>
+                            <input type="text" [(ngModel)]="modalcode" class="form-control">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label><b>Question:</b></label>
+                            <input type="text" [(ngModel)]="modalques" class="form-control">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label><b>Time Limit:</b></label>
+                            <input type="text" [(ngModel)]="modaltime" class="form-control">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label><b>Difficulty:</b></label>
+                            <input type="text" [(ngModel)]="modaldiff" class="form-control">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label><b>Type:</b></label>
+                            <input type="text" [(ngModel)]="modaltype" class="form-control">
+                        </td>
+                    </tr>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
