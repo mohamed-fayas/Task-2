@@ -4,6 +4,7 @@
             <div class="dropdown">
                 <select class="form-control">
                     <option disabled selected>Question Type:</option>
+                    <option>All</option>
                     <option>MCQ</option>
                     <option>Fill in the blanks</option>
                 </select>
@@ -13,6 +14,7 @@
             <div class="dropdown">
                 <select class="form-control">
                     <option disabled selected>Difficulty Level:</option>
+                    <option>All</option>
                     <option>Hard</option>
                     <option>Easy</option>
                     <option>Medium</option>
@@ -22,7 +24,7 @@
         <div class="col-md-3 p-4">
             <div class="dropdown">
                 <select class="form-control" name="code" [(ngModel)]='questioncode'>
-                    <option value="" disabled selected >Question Code:</option>
+                    <option value="" disabled selected>Question Code:</option>
                     <option value="all">All</option>
                     <option value="QTM001">QTM001</option>
                     <option value="QTM002">QTM002</option>
@@ -34,7 +36,7 @@
                 </button>
             </div>
         </div>
-    
+
         <div class="add">
             <button type="button" class="btn btn-warning px-2" routerLink="add_question">Add question</button>
         </div>
@@ -116,3 +118,4 @@
             </div>
         </div>
     </div>
+</div>

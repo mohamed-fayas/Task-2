@@ -14,11 +14,13 @@ export class LandingPageComponent {
   mainArrayData: any;
 
   // modal
-  modalcode: any =''
+  modalcode: any = ''
   modalques = ''
   modaltime = ''
   modaldiff = ''
   modaltype = ''
+
+  questioncode = ''
 
   constructor(private service: ServiceService) { }
   loadingData() {
@@ -41,7 +43,6 @@ export class LandingPageComponent {
     this.loadingData()
   }
 
-  questioncode = ''
   filterCode() {
 
     if (this.questioncode != 'all') {
@@ -72,7 +73,7 @@ export class LandingPageComponent {
 
   loadModal(clickedRow: any) {
     this.modalcode = clickedRow['code']
-    console.log(clickedRow['modalcode']);
+    // console.log(clickedRow['modalcode']);
     this.modalques = clickedRow['question']
     this.modaltime = clickedRow['timeLimit']
     this.modaldiff = clickedRow['difficulty']

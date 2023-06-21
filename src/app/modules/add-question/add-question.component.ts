@@ -38,13 +38,9 @@ constructor(private router: Router){}
 
 localstorageData(){
   this.code = localStorage.getItem('code') || null
-    // console.log(this.code)
     this.question = localStorage.getItem('question') || null
-    // console.log(this.question)
     this.timeLimit = localStorage.getItem('timeLimit') || null
-    // console.log(this.timeLimit)
     this.difficulty = localStorage.getItem('difficulty') || null
-    // console.log(this.difficulty)
     this.test = localStorage.getItem('test') || null
   
     

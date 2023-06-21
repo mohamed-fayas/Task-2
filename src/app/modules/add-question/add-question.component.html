@@ -21,7 +21,8 @@
                                     <option>Low</option>
                                 </select>
                                 <div *ngIf="select1.touched">
-                                    <span *ngIf="select1.errors?.['required']">Please select an option.</span>
+                                    <span *ngIf="select1.errors?.['required']" style="color: red;">Please select an
+                                        option.</span>
                                 </div>
                             </div>
                         </div>
@@ -31,10 +32,11 @@
                                 <label>Mode:</label>
                                 <select name="selectedOption2" #select2="ngModel" ngModel required class="form-control">
                                     <option>Exam</option>
-                                    <option value="low">Practice</option>
+                                    <option>Practice</option>
                                 </select>
                                 <div *ngIf="select2.touched">
-                                    <span *ngIf="select2.errors?.['required']">Please select an option.</span>
+                                    <span *ngIf="select2.errors?.['required']" style="color: red;">Please select an
+                                        option.</span>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +45,8 @@
                             <label>Score:</label>
                             <input type="number" name="input1" #input1="ngModel" ngModel required>
                             <div *ngIf="input1.touched">
-                                <span *ngIf="input1.errors?.['required']">Please enter the score.</span>
+                                <span *ngIf="input1.errors?.['required']" style="color: red;">Please enter the
+                                    score.</span>
                             </div>
                         </div>
 
@@ -51,7 +54,8 @@
                             <label>Time Limit:</label><br>
                             <input type="time" name="input2" #input2="ngModel" ngModel required>
                             <div *ngIf="input2.touched">
-                                <span *ngIf="input2.errors?.['required']">Please enter the time.</span>
+                                <span *ngIf="input2.errors?.['required']" style="color: red;">Please enter the
+                                    time.</span>
                             </div>
                         </div>
                     </div>
@@ -63,10 +67,11 @@
                                 <select class="form-control" name="selectedOption3" #select3="ngModel"
                                     (change)="onChange($event)" ngModel required>
                                     <option value="MCQ">MCQ</option>
-                                    <option value="Fill the blanks">Fill in the blanks</option>
+                                    <option value="FILL IN THE BLANKS">FILL IN THE BLANKS</option>
                                 </select>
                                 <div *ngIf="select3.touched">
-                                    <span *ngIf="select3.errors?.['required']">Please select an option.</span>
+                                    <span *ngIf="select3.errors?.['required']" style="color: red;">Please select an
+                                        option.</span>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +86,8 @@
                                     <option>Text</option>
                                 </select>
                                 <div *ngIf="select4.touched">
-                                    <span *ngIf="select4.errors?.['required']">Please select an option.</span>
+                                    <span *ngIf="select4.errors?.['required']" style="color: red;">Please select an
+                                        option.</span>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +100,8 @@
                                     <option value="QTM002">QTM002</option>
                                 </select>
                                 <div *ngIf="select5.touched">
-                                    <span *ngIf="select5.errors?.['required']">Please select an option.</span>
+                                    <span *ngIf="select5.errors?.['required']" style="color: red;">Please select an
+                                        option.</span>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +114,8 @@
                                     <option>Test 2</option>
                                 </select>
                                 <div *ngIf="select6.touched">
-                                    <span *ngIf="select6.errors?.['required']">Please select an option.</span>
+                                    <span *ngIf="select6.errors?.['required']" style="color: red;">Please select an
+                                        option.</span>
                                 </div>
                             </div>
                         </div>
@@ -161,7 +169,7 @@
                                 </p>
                             </div>
 
-                            <div *ngIf="selectedOption3 === 'Fill the blanks'">
+                            <div *ngIf="selectedOption3 === 'FILL IN THE BLANKS'">
                                 <label style="color: red;">Please enter your answer here:</label>
                                 <p><input id="input" type="text" placeholder="1" style="background-color: aliceblue;">
                                 </p>
